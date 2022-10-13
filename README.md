@@ -1,6 +1,6 @@
-# whywaita/actions-cache-s3
+# dmolik/actions-s3-caching
 
-`whywaita/actions-cache-s3` is a forked Action from [@actions/cache](https://github.com/actions/cache).
+`dmolik/actions-s3-caching` is a forked Action from [@actions/cache](https://github.com/actions/cache).
 
 This Action provides Amazon Web Services S3 backend (and compatible software) for @actions/cache.
 
@@ -8,7 +8,7 @@ This Action provides Amazon Web Services S3 backend (and compatible software) fo
 
 ```yaml
 - name: Cache multiple paths
-  uses: whywaita/actions-cache-s3@v2
+  uses: dmolik/actions-s3-caching@v1
   with:
     path: |
       ~/cache
