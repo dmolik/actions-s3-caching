@@ -90,7 +90,7 @@ export function getInputS3ClientConfig(): S3ClientConfig | undefined {
         }
     } : {
         credentials: fromTokenFile({
-          roleAssumerWithWebIdentity: getDefaultRoleAssumerWithWebIdentity,
+          roleAssumerWithWebIdentity: getDefaultRoleAssumerWithWebIdentity(),
         })
     }
 

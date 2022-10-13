@@ -1,6 +1,6 @@
 {
   "name": "actions-s3-caching",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "private": true,
   "description": "Cache dependencies and build outputs",
   "main": "dist/restore/index.js",
