@@ -3,6 +3,7 @@ import * as core from "@actions/core";
 import { Inputs, Outputs, RefKey, State } from "../constants";
 
 import {CommonPrefix, InputSerialization, S3ClientConfig} from "@aws-sdk/client-s3";
+import { fromTokenFile } from "@aws-sdk/credential-provider-web-identity";
 
 export function isGhes(): boolean {
     const ghUrl = new URL(
@@ -87,7 +88,9 @@ export function getInputS3ClientConfig(): S3ClientConfig | undefined {
           accessKeyId: core.getInput(Inputs.AWSAccessKeyId),
           secretAccessKey: core.getInput(Inputs.AWSSecretAccessKey)
         }
-    } : null
+    } : fromTokenFile({
+        roleAssumerWithWebIdentity: getDefaultRoleAssumerWithWebIdentity()
+    })
     const s3config = {
         ...credentials,
         region: core.getInput(Inputs.AWSRegion),
